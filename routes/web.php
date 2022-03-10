@@ -20,7 +20,9 @@ Route::get('/', function () {
 // PRODUTOS
 Route::resource('produtos', 'App\Http\Controllers\ProdutosController');
 
-
 // CATEGORIAS
 Route::resource('categorias', 'App\Http\Controllers\CategoriasController');
+
+// CLIENTES
+Route::resource('clientes', 'App\Http\Controllers\ClientesController');
 

@@ -17,6 +17,9 @@
           <li @if($current=='categorias') class="nav-item active" @else  class="nav-item" @endif>
             <a class="nav-link" href="{{ route('categorias.index') }}">Categorias</a>
           </li>
+          <li @if($current=='clientes') class="nav-item active" @else class="nav-item" @endif>
+            <a class="nav-link" href="{{ route('clientes.index') }}">Clientes</a>
+          </li>
         </ul>
       </div>
 

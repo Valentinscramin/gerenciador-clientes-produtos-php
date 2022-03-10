@@ -1,17 +1,17 @@
-@extends('layout.app', ["current" => "produtos"])
+@extends('layout.app', ['current' => 'clientes'])
 
-@section('title', 'Produtos')
+@section('title', 'Clientes')
 
 @section('content')
+
 <div class="row">
     <div class="col-12">
-        <a href="{{ route('produtos.create') }}" class="btn btn-primary">Novo Produto</a>
+        <a href="{{ route('clientes.create') }}" class="btn btn-primary">Novo Cliente</a>
     </div>
 </div>
 <br>
 
-@if(count($produtos) > 0)
-
+@if(count($clientes) > 0) 
     <div class="row">
         <div class="col-12">
             <table class="table">
@@ -19,23 +19,23 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Estoque</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">preço</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Ação</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ( $produtos as $cadaUm )
+                    @foreach ( $clientes as $cadaUm)
                     <tr>
                         <th scope="row">{{$cadaUm->id}}</th>
                         <td>{{$cadaUm->name}}</td>
-                        <td>{{$cadaUm->stock}}</td>
-                        <td>{{$cadaUm->categoria_id}}</td>
-                        <td>R$ {{$cadaUm->preco}}</td>
+                        <td>{{$cadaUm->cpf}}</td>
+                        <td>{{$cadaUm->cidade}}</td>
+                        <td>{{$cadaUm->estado}}</td>
                         <td>
-                            <a class="btn btn-primary btn-sm" href="{{ route('produtos.edit', $cadaUm->id) }}">Editar</a>
-                            <form action="{{ route('produtos.destroy', $cadaUm->id) }}" method="POST">
+                            <a class="btn btn-primary btn-sm" href="{{ route('clientes.edit', $cadaUm->id) }}">Editar</a>
+                            <form action="{{ route('clientes.destroy', $cadaUm->id) }}" method="POST">
                                 @csrf
                                 @method("delete")
                                 <button class="btn btn-danger btn-sm" type="submit">Apagar</>
@@ -47,7 +47,6 @@
             </table>
         </div>
     </div>
-
 @endif
 
 @endsection
