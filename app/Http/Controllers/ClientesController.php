@@ -47,7 +47,7 @@ class ClientesController extends Controller
             "bairroCliente" => "required|max:100",
             "cidadeCliente" => "required|max:100",
             "estadoCliente" => "required|max:2",
-            "emailCliente" => "required",
+            "emailCliente" => "required|email",
         ]);
         
         $cliente = new Cliente();
@@ -106,7 +106,7 @@ class ClientesController extends Controller
             "bairroCliente" => "required|max:100",
             "cidadeCliente" => "required|max:100",
             "estadoCliente" => "required|max:2",
-            "emailCliente" => "required"
+            "emailCliente" => "required|email"
         ]);
 
         $cliente = Cliente::find($id);
