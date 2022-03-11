@@ -11,8 +11,8 @@
                 @csrf
 
                 <div class="mb-3">
-                  <label for="nomeCategoria" class="form-label">Nome Categoria</label>
-                  <input type="text" class="form-control" id="nomeCategoria" name="nomeCategoria">
+                  <label for="nameCategoria" class="form-label">Nome Categoria</label>
+                  <input type="text" class="form-control" id="nameCategoria" name="nameCategoria">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
@@ -20,4 +20,13 @@
             </form>
         </div>
     </div>
+    @if($errors->any())
+        <div style="margin:10px;">
+        @foreach( $errors->all() as $error )
+          <div class="alert alert-danger" role="alert">
+            <strong>{{ $error }}</strong>
+          </div>
+        @endforeach
+        </div>
+    @endif
 @endsection

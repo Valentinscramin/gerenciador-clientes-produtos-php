@@ -29,16 +29,16 @@
                     @foreach ( $clientes as $cadaUm)
                     <tr>
                         <th scope="row">{{$cadaUm->id}}</th>
-                        <td>{{$cadaUm->name}}</td>
-                        <td>{{$cadaUm->cpf}}</td>
-                        <td>{{$cadaUm->cidade}}</td>
-                        <td>{{$cadaUm->estado}}</td>
+                        <td>{{$cadaUm->nameCliente}}</td>
+                        <td>{{$cadaUm->cpfCliente}}</td>
+                        <td>{{$cadaUm->cidadeCliente}}</td>
+                        <td>{{$cadaUm->estadoCliente}}</td>
                         <td>
-                            <a class="btn btn-primary btn-sm" href="{{ route('clientes.edit', $cadaUm->id) }}">Editar</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('clientes.edit', $cadaUm->id) }}"><i class="fa-solid fa-pencil"></i></a>
                             <form action="{{ route('clientes.destroy', $cadaUm->id) }}" method="POST">
                                 @csrf
                                 @method("delete")
-                                <button class="btn btn-danger btn-sm" type="submit">Apagar</>
+                                <button class="btn btn-danger btn-sm" type="submit"><i class="fa-solid fa-trash"></>
                             </form>
                         </td>
                     </tr>
