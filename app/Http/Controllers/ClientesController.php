@@ -47,6 +47,7 @@ class ClientesController extends Controller
             "bairroCliente" => "required|max:100",
             "cidadeCliente" => "required|max:100",
             "estadoCliente" => "required|max:2",
+            "emailCliente" => "required",
         ]);
         
         $cliente = new Cliente();
@@ -58,6 +59,7 @@ class ClientesController extends Controller
         $cliente->bairroCliente = $request->input('bairroCliente');
         $cliente->cidadeCliente = $request->input('cidadeCliente');
         $cliente->estadoCliente = $request->input('estadoCliente');
+        $cliente->emailCliente = $request->input('emailCliente');
         $cliente->save();
         return redirect('clientes');
     }
@@ -97,13 +99,14 @@ class ClientesController extends Controller
 
         $request->validate([
             "nameCliente" => "required|min:5|max:100",
-            "cpfCliente" => "required|max:18|unique:clientes",
+            "cpfCliente" => "required|max:18",
             "cepCliente" => "required|max:14",
             "enderecoCliente" => "required|max:100",
             "numeroCliente" => "required",
             "bairroCliente" => "required|max:100",
             "cidadeCliente" => "required|max:100",
             "estadoCliente" => "required|max:2",
+            "emailCliente" => "required"
         ]);
 
         $cliente = Cliente::find($id);
@@ -118,6 +121,7 @@ class ClientesController extends Controller
             $cliente->bairroCliente = $request->input('bairroCliente');
             $cliente->cidadeCliente = $request->input('cidadeCliente');
             $cliente->estadoCliente = $request->input('estadoCliente');
+            $cliente->emailCliente = $request->input('emailCliente');
             $cliente->save();
             return redirect('clientes');
         }

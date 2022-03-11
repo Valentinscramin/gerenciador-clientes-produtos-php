@@ -51,6 +51,11 @@
                   <input type="text" class="form-control" id="estadoCliente" name="estadoCliente">
                 </div>
 
+                <div class="mb-3">
+                  <label for="emailCliente" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="emailCliente" name="emailCliente">
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
             </form>

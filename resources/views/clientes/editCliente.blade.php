@@ -17,7 +17,7 @@
 
                 <div class="mb-3">
                   <label for="cpfCliente" class="form-label">CPF</label>
-                  <input type="text" class="form-control" id="cpfCliente" name="cpfCliente" value="{{ $cliente->cpfCliente }}">
+                  <input type="text" class="form-control" id="cpfCliente" name="cpfCliente" value="{{ $cliente->cpfCliente }}" readonly>
                 </div>
 
                 <div class="mb-3">
@@ -48,6 +48,11 @@
                 <div class="mb-3">
                   <label for="estadoCliente" class="form-label">Estado</label>
                   <input type="text" class="form-control" id="estadoCliente" name="estadoCliente" value="{{ $cliente->estadoCliente }}">
+                </div>
+
+                <div class="mb-3">
+                  <label for="emailCliente" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="emailCliente" name="emailCliente" value="{{ $cliente->emailCliente }}">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
