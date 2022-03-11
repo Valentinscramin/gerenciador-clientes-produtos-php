@@ -15,9 +15,9 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('stock');
-            $table->float('preco');
+            $table->string('nameProduto');
+            $table->integer('stockProduto');
+            $table->float('precoProduto');
             $table->foreignId('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();
         });

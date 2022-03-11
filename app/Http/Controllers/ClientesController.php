@@ -39,25 +39,25 @@ class ClientesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "nomeCliente" => "required",
-            "cpfCliente" => "required",
-            "cepCliente" => "required",
-            "enderecoCliente" => "required",
+            "nameCliente" => "required|min:5|max:100",
+            "cpfCliente" => "required|max:18|unique:clientes",
+            "cepCliente" => "required|max:14",
+            "enderecoCliente" => "required|max:100",
             "numeroCliente" => "required",
-            "bairroCliente" => "required",
-            "cidadeCliente" => "required",
-            "estadoCliente" => "required"
+            "bairroCliente" => "required|max:100",
+            "cidadeCliente" => "required|max:100",
+            "estadoCliente" => "required|max:2",
         ]);
         
         $cliente = new Cliente();
-        $cliente->name = $request->input('nomeCliente');
-        $cliente->cpf = $request->input('cpfCliente');
-        $cliente->cep = $request->input('cepCliente');
-        $cliente->endereco = $request->input('enderecoCliente');
-        $cliente->numero = $request->input('numeroCliente');
-        $cliente->bairro = $request->input('bairroCliente');
-        $cliente->cidade = $request->input('cidadeCliente');
-        $cliente->estado = $request->input('estadoCliente');
+        $cliente->nameCliente = $request->input('nameCliente');
+        $cliente->cpfCliente = $request->input('cpfCliente');
+        $cliente->cepCliente = $request->input('cepCliente');
+        $cliente->enderecoCliente = $request->input('enderecoCliente');
+        $cliente->numeroCliente = $request->input('numeroCliente');
+        $cliente->bairroCliente = $request->input('bairroCliente');
+        $cliente->cidadeCliente = $request->input('cidadeCliente');
+        $cliente->estadoCliente = $request->input('estadoCliente');
         $cliente->save();
         return redirect('clientes');
     }
@@ -96,28 +96,28 @@ class ClientesController extends Controller
     {
 
         $request->validate([
-            "nomeCliente" => "required|min:5|max:100",
-            "cpfCliente" => "required|max:18",
+            "nameCliente" => "required|min:5|max:100",
+            "cpfCliente" => "required|max:18|unique:clientes",
             "cepCliente" => "required|max:14",
             "enderecoCliente" => "required|max:100",
             "numeroCliente" => "required",
             "bairroCliente" => "required|max:100",
             "cidadeCliente" => "required|max:100",
-            "estadoCliente" => "required|max:2"
+            "estadoCliente" => "required|max:2",
         ]);
 
         $cliente = Cliente::find($id);
         
         if( isset($cliente) )
         {
-            $cliente->name = $request->input('nomeCliente');
-            $cliente->cpf = $request->input('cpfCliente');
-            $cliente->cep = $request->input('cepCliente');
-            $cliente->endereco = $request->input('enderecoCliente');
-            $cliente->numero = $request->input('numeroCliente');
-            $cliente->bairro = $request->input('bairroCliente');
-            $cliente->cidade = $request->input('cidadeCliente');
-            $cliente->estado = $request->input('estadoCliente');
+            $cliente->nameCliente = $request->input('nameCliente');
+            $cliente->cpfCliente = $request->input('cpfCliente');
+            $cliente->cepCliente = $request->input('cepCliente');
+            $cliente->enderecoCliente = $request->input('enderecoCliente');
+            $cliente->numeroCliente = $request->input('numeroCliente');
+            $cliente->bairroCliente = $request->input('bairroCliente');
+            $cliente->cidadeCliente = $request->input('cidadeCliente');
+            $cliente->estadoCliente = $request->input('estadoCliente');
             $cliente->save();
             return redirect('clientes');
         }

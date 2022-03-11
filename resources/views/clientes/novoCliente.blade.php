@@ -12,8 +12,8 @@
                 @csrf
 
                 <div class="mb-3">
-                  <label for="nomeCliente" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="nomeCliente" name="nomeCliente">
+                  <label for="nameCliente" class="form-label">Nome Completo</label>
+                  <input type="text" class="form-control" id="nameCliente" name="nameCliente">
                 </div>
 
                 <div class="mb-3">

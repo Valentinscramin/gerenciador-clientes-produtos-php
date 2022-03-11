@@ -9,12 +9,12 @@
                 @csrf
                 @method("POST")
                 <div class="mb-3">
-                  <label for="nomeProduto" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="nomeProduto" name="nomeProduto">
+                  <label for="nameProduto" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nameProduto" name="nameProduto">
                 </div>
                 <div class="mb-3">
-                  <label for="estoqueProduto" class="form-label">Estoque</label>
-                  <input type="number" class="form-control" id="estoqueProduto" name="estoqueProduto">
+                  <label for="stockProduto" class="form-label">Estoque</label>
+                  <input type="number" class="form-control" id="stockProduto" name="stockProduto">
                 </div>
                 <div class="mb-3">
                   <label for="precoProduto" class="form-label">Valor</label>
@@ -24,7 +24,7 @@
                 <div class="mb-3">
                   <select class="form-select" aria-label="Default select example" name="categoriaProduto">
                       @foreach( $categorias as $cadaUm )
-                        <option value="{{ $cadaUm->id }}">{{ $cadaUm->name }}</option>
+                        <option value="{{ $cadaUm->id }}">{{ $cadaUm->nameCategoria }}</option>
                       @endforeach
                   </select>
                 </div>

@@ -25,7 +25,7 @@
                     @foreach ( $categorias as $cadaUm)
                     <tr>
                         <th scope="row">{{$cadaUm->id}}</th>
-                        <td>{{$cadaUm->name}}</td>
+                        <td>{{$cadaUm->nameCategoria}}</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="{{ route('categorias.edit', $cadaUm->id) }}">Editar</a>
                             <form action="{{ route('categorias.destroy', $cadaUm->id) }}" method="POST">

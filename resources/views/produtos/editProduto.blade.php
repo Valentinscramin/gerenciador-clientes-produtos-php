@@ -11,21 +11,21 @@
                 @method("PUT")
                 
                 <div class="mb-3">
-                  <label for="nomeProduto" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="nomeProduto" name="nomeProduto" value="{{$produto->name}}">
+                  <label for="nameProduto" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nameProduto" name="nameProduto" value="{{$produto->nameProduto}}">
                 </div>
                 <div class="mb-3">
-                  <label for="estoqueProduto" class="form-label">Estoque</label>
-                  <input type="number" class="form-control" id="estoqueProduto" name="estoqueProduto" value="{{$produto->stock}}">
+                  <label for="stockProduto" class="form-label">Estoque</label>
+                  <input type="number" class="form-control" id="stockProduto" name="stockProduto" value="{{$produto->stockProduto}}">
                 </div>
                 <div class="mb-3">
                   <label for="precoProduto" class="form-label">Valor</label>
-                  <input type="number" class="form-control" id="precoProduto" name="precoProduto" min="0.00" max="10000.00" step="0.01" value="{{$produto->preco}}">
+                  <input type="number" class="form-control" id="precoProduto" name="precoProduto" min="0.00" max="10000.00" step="0.01" value="{{$produto->precoProduto}}">
                 </div>
                 <div class="mb-3">
                   <select class="form-select" aria-label="Default select example" name="categoriaProduto">
                       @foreach( $categorias as $cadaUm )
-                        <option value="{{ $cadaUm->id }}">{{ $cadaUm->name }}</option>
+                        <option value="{{ $cadaUm->id }}">{{ $cadaUm->nameCategoria }}</option>
                       @endforeach
                   </select>
                 </div>

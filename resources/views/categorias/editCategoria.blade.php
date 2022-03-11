@@ -11,8 +11,8 @@
                 @csrf
 
                 <div class="mb-3">
-                  <label for="nomeCategoria" class="form-label">Nome Categoria</label>
-                  <input type="text" class="form-control" id="nomeCategoria" name="nomeCategoria" value="{{$categoria->name}}">
+                  <label for="nameCategoria" class="form-label">Nome Categoria</label>
+                  <input type="text" class="form-control" id="nameCategoria" name="nameCategoria" value="{{$categoria->nameCategoria}}">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>

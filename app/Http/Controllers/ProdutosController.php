@@ -40,16 +40,16 @@ class ProdutosController extends Controller
     {
 
         $request->validate([
-            "nomeProduto" => "required",
-            "estoqueProduto" => "required",
+            "nameProduto" => "required",
+            "stockProduto" => "required",
             "precoProduto" => "required",
             "categoriaProduto" => "required"
         ]);
 
         $produto = new Produto();
-        $produto->name = $request->input('nomeProduto');
-        $produto->stock = $request->input('estoqueProduto');
-        $produto->preco = $request->input('precoProduto');
+        $produto->nameProduto = $request->input('nameProduto');
+        $produto->stockProduto = $request->input('stockProduto');
+        $produto->precoProduto = $request->input('precoProduto');
         $produto->categoria_id = $request->input('categoriaProduto');
         $produto->save();
         return redirect('produtos');
@@ -96,16 +96,16 @@ class ProdutosController extends Controller
     {
 
         $request->validate([
-            "nomeProduto" => "required|max:100",
-            "estoqueProduto" => "required|min:5",
+            "nameProduto" => "required|max:100",
+            "stockProduto" => "required|min:5",
             "precoProduto" => "required",
             "categoriaProduto" => "required"
         ]);
 
         $produto = Produto::find($id);
-        $produto->name = $request->input('nomeProduto');
-        $produto->stock = $request->input('estoqueProduto');
-        $produto->preco = $request->input('precoProduto');
+        $produto->nameProduto = $request->input('nameProduto');
+        $produto->stockProduto = $request->input('stockProduto');
+        $produto->precoProduto = $request->input('precoProduto');
         $produto->categoria_id = $request->input('categoriaProduto');
         $produto->save();
         return redirect('produtos');

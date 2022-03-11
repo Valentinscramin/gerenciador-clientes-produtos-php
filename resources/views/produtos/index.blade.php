@@ -29,10 +29,10 @@
                     @foreach ( $produtos as $cadaUm )
                     <tr>
                         <th scope="row">{{$cadaUm->id}}</th>
-                        <td>{{$cadaUm->name}}</td>
-                        <td>{{$cadaUm->stock}}</td>
+                        <td>{{$cadaUm->nameProduto}}</td>
+                        <td>{{$cadaUm->stockProduto}}</td>
                         <td>{{$cadaUm->categoria_id}}</td>
-                        <td>R$ {{$cadaUm->preco}}</td>
+                        <td>R$ {{$cadaUm->precoProduto}}</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="{{ route('produtos.edit', $cadaUm->id) }}">Editar</a>
                             <form action="{{ route('produtos.destroy', $cadaUm->id) }}" method="POST">
