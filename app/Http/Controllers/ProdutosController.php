@@ -96,8 +96,8 @@ class ProdutosController extends Controller
     {
 
         $request->validate([
-            "nomeProduto" => "required",
-            "estoqueProduto" => "required",
+            "nomeProduto" => "required|max:100",
+            "estoqueProduto" => "required|min:5",
             "precoProduto" => "required",
             "categoriaProduto" => "required"
         ]);

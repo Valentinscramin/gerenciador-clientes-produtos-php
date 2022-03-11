@@ -96,14 +96,14 @@ class ClientesController extends Controller
     {
 
         $request->validate([
-            "nomeCliente" => "required",
-            "cpfCliente" => "required",
-            "cepCliente" => "required",
-            "enderecoCliente" => "required",
+            "nomeCliente" => "required|min:5|max:100",
+            "cpfCliente" => "required|max:18",
+            "cepCliente" => "required|max:14",
+            "enderecoCliente" => "required|max:100",
             "numeroCliente" => "required",
-            "bairroCliente" => "required",
-            "cidadeCliente" => "required",
-            "estadoCliente" => "required"
+            "bairroCliente" => "required|max:100",
+            "cidadeCliente" => "required|max:100",
+            "estadoCliente" => "required|max:2"
         ]);
 
         $cliente = Cliente::find($id);

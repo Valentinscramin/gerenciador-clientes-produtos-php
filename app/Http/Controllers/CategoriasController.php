@@ -38,7 +38,7 @@ class CategoriasController extends Controller
     {
 
         $request->validate([
-            "nomeCategoria" => "required"
+            "nomeCategoria" => "required|max:100"
         ]);
 
         $categoria = new Categoria();
