@@ -38,6 +38,10 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
+
+        $mensagens = ["cpfCliente.unique" => "Cadastro não realizado, cpf já existente."];
+
+
         $request->validate([
             "nameCliente" => "required|min:5|max:100",
             "cpfCliente" => "required|max:18|unique:clientes",
@@ -48,7 +52,7 @@ class ClientesController extends Controller
             "cidadeCliente" => "required|max:100",
             "estadoCliente" => "required|max:2",
             "emailCliente" => "required|email",
-        ]);
+        ], $mensagens);
         
         $cliente = new Cliente();
         $cliente->nameCliente = $request->input('nameCliente');
