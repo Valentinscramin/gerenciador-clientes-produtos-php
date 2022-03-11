@@ -33,4 +33,13 @@
             </form>
         </div>
     </div>
+    @if($errors->any())
+        <div style="margin:10px;">
+        @foreach( $errors->all() as $error )
+          <div class="alert alert-danger" role="alert">
+            <strong>{{ $error }}</strong>
+          </div>
+        @endforeach
+        </div>
+    @endif
 @endsection

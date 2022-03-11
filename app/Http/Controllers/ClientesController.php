@@ -38,6 +38,17 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "nomeCliente" => "required",
+            "cpfCliente" => "required",
+            "cepCliente" => "required",
+            "enderecoCliente" => "required",
+            "numeroCliente" => "required",
+            "bairroCliente" => "required",
+            "cidadeCliente" => "required",
+            "estadoCliente" => "required"
+        ]);
+        
         $cliente = new Cliente();
         $cliente->name = $request->input('nomeCliente');
         $cliente->cpf = $request->input('cpfCliente');
@@ -83,6 +94,18 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            "nomeCliente" => "required",
+            "cpfCliente" => "required",
+            "cepCliente" => "required",
+            "enderecoCliente" => "required",
+            "numeroCliente" => "required",
+            "bairroCliente" => "required",
+            "cidadeCliente" => "required",
+            "estadoCliente" => "required"
+        ]);
+
         $cliente = Cliente::find($id);
         
         if( isset($cliente) )

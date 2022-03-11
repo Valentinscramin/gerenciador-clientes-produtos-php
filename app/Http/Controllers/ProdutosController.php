@@ -39,6 +39,13 @@ class ProdutosController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            "nomeProduto" => "required",
+            "estoqueProduto" => "required",
+            "precoProduto" => "required",
+            "categoriaProduto" => "required"
+        ]);
+
         $produto = new Produto();
         $produto->name = $request->input('nomeProduto');
         $produto->stock = $request->input('estoqueProduto');
@@ -87,6 +94,13 @@ class ProdutosController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            "nomeProduto" => "required",
+            "estoqueProduto" => "required",
+            "precoProduto" => "required",
+            "categoriaProduto" => "required"
+        ]);
 
         $produto = Produto::find($id);
         $produto->name = $request->input('nomeProduto');
