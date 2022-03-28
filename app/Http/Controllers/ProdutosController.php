@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Categoria;
+use App\Models\Endereco;
 
 class ProdutosController extends Controller
 {
@@ -16,6 +17,12 @@ class ProdutosController extends Controller
     public function index()
     {
         $produtos = Produto::all();
+
+        foreach($produtos as $cadaUm => $value){
+            $categoria = Categoria::find($value['categoria_id']);
+            $value["nameCategoria"] = $categoria['nameCategoria'];
+        }
+        
         return view("produtos.index", compact("produtos"));
     }
 
