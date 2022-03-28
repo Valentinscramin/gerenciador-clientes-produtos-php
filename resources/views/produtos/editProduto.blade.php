@@ -25,7 +25,11 @@
                 <div class="mb-3">
                   <select class="form-select" aria-label="Default select example" name="categoriaProduto">
                       @foreach( $categorias as $cadaUm )
-                        <option value="{{ $cadaUm->id }}">{{ $cadaUm->nameCategoria }}</option>
+                        @if( $produto->categoria_id == $cadaUm->id )
+                          <option value="{{ $cadaUm->id }}" selected>{{ $cadaUm->nameCategoria }}</option>
+                        @else
+                          <option value="{{ $cadaUm->id }}">{{ $cadaUm->nameCategoria }}</option>
+                        @endif
                       @endforeach
                   </select>
                 </div>
