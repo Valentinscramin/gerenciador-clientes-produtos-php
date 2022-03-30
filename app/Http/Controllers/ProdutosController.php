@@ -17,11 +17,6 @@ class ProdutosController extends Controller
     public function index()
     {
         $produtos = Produto::all();
-
-        foreach($produtos as $cadaUm => $value){
-            $categoria = Categoria::find($value['categoria_id']);
-            $value["nameCategoria"] = $categoria['nameCategoria'];
-        }
         
         return view("produtos.index", compact("produtos"));
     }

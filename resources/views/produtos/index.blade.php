@@ -31,7 +31,7 @@
                         <th scope="row">{{$cadaUm->id}}</th>
                         <td>{{$cadaUm->nameProduto}}</td>
                         <td>{{$cadaUm->stockProduto}}</td>
-                        <td>{{$cadaUm->nameCategoria}}</td>
+                        <td>{{$cadaUm->categoria->nameCategoria}}</td>
                         <td>R$ {{$cadaUm->precoProduto}}</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="{{ route('produtos.edit', $cadaUm->id) }}"><i class="fa-solid fa-pencil"></i></a>
