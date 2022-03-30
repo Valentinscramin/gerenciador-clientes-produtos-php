@@ -17,7 +17,6 @@ class ProdutosController extends Controller
     public function index()
     {
         $produtos = Produto::all();
-        
         return view("produtos.index", compact("produtos"));
     }
 
@@ -99,7 +98,7 @@ class ProdutosController extends Controller
 
         $request->validate([
             "nameProduto" => "required|max:100",
-            "stockProduto" => "required|min:5",
+            "stockProduto" => "required|min:2",
             "precoProduto" => "required",
             "categoriaProduto" => "required"
         ]);
