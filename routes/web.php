@@ -12,9 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Produto;
+// use App\Models\Categoria;
 
 Route::get('/', function () {
-    return view('index');
+
+    $produtosIndex = (new Produto)->with(['categoria'])->get();
+
+    return view('index', ['produtosIndex' => $produtosIndex]);
 });
 
 // PRODUTOS

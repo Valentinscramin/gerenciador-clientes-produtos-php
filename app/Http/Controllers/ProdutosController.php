@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Categoria;
-use App\Models\Endereco;
 
 class ProdutosController extends Controller
 {
