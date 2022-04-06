@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Models\Produto;
-// use App\Models\Categoria;
+use App\Models\Categoria;
 
 Route::get('/', function () {
 
     $produtosIndex = (new Produto)->with(['categoria'])->get();
+    $categoriaIndex = (new Categoria)->with(['produto'])->get();
 
-    return view('index', ['produtosIndex' => $produtosIndex]);
+    return view('index', compact('produtosIndex', 'categoriaIndex'));
 });
 
 // PRODUTOS

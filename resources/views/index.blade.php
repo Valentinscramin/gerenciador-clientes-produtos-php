@@ -4,9 +4,6 @@
 
 @section('content')
 
-    {{-- {{ dd($produtosIndex) }} --}}
-    {{-- {{ var_dump($categoriasIndex) }} --}}
-
     <div class="container">
         <div class="col">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -36,24 +33,26 @@
     <div class="container">
         <h1-6>Produtos<span class="badge bg-dark">new</span></h1-6>
     </div>
+    <div class="container">
+        <div class="col">
+        @foreach($categoriaIndex as $cadaUm => $value)
+            <button type="button" class="btn btn-dark">{{ $value['nameCategoria'] }}</button>
+        @endforeach
+        </div>
+    </div>
 
     <div class="container">
           <div class="col">
-            <?php 
-            foreach ($produtosIndex as $key => $value) {
-            
-            ?>
+            @foreach ($produtosIndex as $key => $value)
             <div class="card" style="width: 18rem;">
                 <img src="https://i.pinimg.com/474x/16/02/7b/16027bfba2e74c5d90b6ce0f28ff9f96.jpg" class="card-img-top" alt="Lisa dos simpsons">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-dark">Go somewhere</a>
+                <h5 class="card-title">{{ $value['nameProduto'] }}</h5>
+                <p class="card-text">R$:{{ $value['precoProduto'] }} Categoria: {{ $value['categoria']['nameCategoria'] }}</p>
+                <a href="#" class="btn btn-dark">Ver produto</a>
                 </div>
             </div>
-            <?php
-            }
-            ?>
+            @endforeach
           </div>
         </div>
     </div>
