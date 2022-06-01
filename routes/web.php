@@ -32,3 +32,8 @@ Route::resource('categorias', 'App\Http\Controllers\CategoriasController');
 // CLIENTES
 Route::resource('clientes', 'App\Http\Controllers\ClientesController');
 
+Auth::routes();
+
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('userHome');
+
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('adminHome');
